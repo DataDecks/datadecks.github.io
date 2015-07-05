@@ -237,7 +237,7 @@ $(function() {
     $('.modal-trigger').leanModal();
 });
 
-WEBSOCKET_URI = "ws://ec2-52-10-25-58.us-west-2.compute.amazonaws.com:80";
+WEBSOCKET_URI = "ws://localhost:8080";
 
 rivets.configure({
 
@@ -266,6 +266,10 @@ rivets.formatters['='] = function (value, arg) {
 
 rivets.formatters.not = function (value) {
   return !value;
+}
+
+rivets.formatters.lowercase = function (value) {
+  return value.toLowerCase();
 }
 
 var game = null;
@@ -329,6 +333,9 @@ function Game(socket) {
     this.startCatPick = function() {
         this.pickingCat = true;
         this.waitingCat = false;
+
+        this.waitingCard = false;
+        this.pickingCard = false;
     }
 
     this.startCardPick = function() {
