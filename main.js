@@ -237,7 +237,7 @@ $(function() {
     $('.modal-trigger').leanModal();
 });
 
-WEBSOCKET_URI = "ws://localhost:8080";
+WEBSOCKET_URI = "ws://ec2-52-10-25-58.us-west-2.compute.amazonaws.com:80";
 
 rivets.configure({
 
